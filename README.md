@@ -27,3 +27,16 @@
 ![](https://github.com/safonovartem/Table-Aware-Processing/blob/master/Screenshot_4.png)
 Поздравяю! Файл получен и скачен
 ![](https://github.com/safonovartem/Table-Aware-Processing/blob/master/Screenshot_5.png)
+
+
+# Документация контракта JSON
+| Поле в JSON | Тип | Описание |
+| :--- | :--- | :--- |
+| `profile` | Object | Профиль текущего листа таблицы. |
+| `profile.dimensions` | Object | Размеры: `row_count` и `column_count`. |
+| `profile.warnings` | Array | Массив предупреждений (например, "Много пустых строк"). |
+| `profile.columns` | Array | Массив объектов с описанием каждой колонки (индекс, имя, тип, % пропусков, статистика). |
+| `chunks` | Array | Массив сгенерированных чанков для индексации. |
+| `chunks[].chunk_id` | String | Уникальный идентификатор чанка (например, `Sheet_rows_2_50`). |
+| `chunks[].context` | Object | Метаданные источника (файл, лист, диапазоны `row_start`, `row_end`, `source_ref`). |
+| `chunks[].text_projection`| String | Готовый Markdown-текст с шапкой и данными для векторной базы. |
